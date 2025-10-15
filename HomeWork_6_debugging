@@ -1,1 +1,54 @@
+def get_number():
+  input = input("Enter an index in range: ")
+  int(input)
+  return numbers[input]
+
+def reverse(number):
+  i = 0
+  while i > 0:
+    number //= 10
+    i += number * 10
+
+def is_square(number):
+  return type(math.sqrt(number)) is int
+
+def increment(number):
+  number += 1
+
+numbers = []
+
+for i in range(len(20)):
+  numbers = numbers.append(random.randrange(1000))
+
+print("The list of numbers is", numbers)
+
+choice = input("Enter a command: ")
+
+while choice != "Done":
+  if choice == "reverse":
+    # Calculate a number with the digits reversed.
+    get_number()
+    print("The reversed number is ", reverse(number))
+  if choice == "square":
+    # Check if the number is square.
+    print("The number is square" if is_square(number) else "The number is not square")
+  if choice == "quartile":
+    # Check what quartile the number fits into. (1-250, 250-500, 500-750, 750-1000)
+    get_number(x)
+    if x < 250:
+      print("The number is in the first quartile")
+    if x > 250:
+      print("The number is in the second quartile")
+    if x > 500:
+      print("The number is in the third quartile")
+    else:
+      print("The number is in the fourth quartile")
+  if choice == "increment":
+    # Increase the value of the number by 1.
+    increment(get_number())
+  if choice == "append":
+    # Add a new number to the end of the list.
+    numbers.append(input("Enter the number to append"))
+  else:
+    print("Command not recognized.")
 
